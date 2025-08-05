@@ -1,5 +1,5 @@
-let numeroSecreto = generarNumeroSecreto();
-let intentos = 1;
+let numeroSecreto = 0;
+let intentos = 0;
 
 console.log(numeroSecreto);
 
@@ -16,7 +16,8 @@ function verificarIntento() {
     asignarTextoElemento(
       "p",
       `Acertaste el número en ${intentos} ${intentos === 1 ? "vez" : "veces"}`
-    ); document.getElementById("reiniciar").removeAttribute("disabled");
+    );
+    document.getElementById("reiniciar").removeAttribute("disabled");
   } else {
     //El usuario no acertó.
     if (numeroDeUsuario > numeroSecreto) {
@@ -38,27 +39,22 @@ function generarNumeroSecreto() {
   return Math.floor(Math.random() * 10) + 1;
 }
 
-asignarTextoElemento("h1", "Juego del número secreto!");
-asignarTextoElemento("p", `Indica un número del 1 al 10`);
-
-/*Has sido contratado(a) para desarrollar una calculadora que calcula el promedio y así verificar la situación de aprobación de un estudiante en función de sus cuatro notas. El promedio requerido para aprobar es de mínimo 5. Tu tarea es implementar dos funciones en JavaScript:
-
-calcularPromedio(nota1, nota2, nota3, nota4) => Esta función recibe las cuatro notas del estudiante como parámetros y devuelve el promedio calculado con base en esas notas.
-verificarAprobacion(promedio) => Esta función recibe el promedio del estudiante como parámetro y devuelve "Aprobado" si el promedio es mayor o igual a 5, en caso contrario, devuelve "Reprobado".
-Utiliza estos valores para las calificaciones:
-*/
-/*
-let nota1 = 7;
-let nota2 = 6;
-let nota3 = 3;
-let nota4 = 5;
-
-function calcularPromedio(nota1, nota2, nota3, nota4) {
-  let promedio = (nota1 + nota2 + nota3 + nota4) / 4;
-  return promedio;
+function condicionesIniciales() {
+  asignarTextoElemento("h1", "Juego del número secreto!");
+  asignarTextoElemento("p", `Indica un número del 1 al 10`);
+  numeroSecreto = generarNumeroSecreto();
+  intentos = 1;
 }
 
-function verificarAprobacion(promedio) {
-  return promedio >= 5 ? "Aprobado" : "Reprobado";
+function reiniciarJuego() {
+  //Limpiar la caja.
+  limpiarCaja();
+  //Indicar mensaje de intervalos de números.
+  //Generar el numero aleatorio.
+  //Inicializar el número de intentos.
+  condicionesIniciales();
+  //Deshabilitar el boton de nuevo juego.
+  document.querySelector("#reiniciar").setAttribute("disabled", "true");
 }
-*/
+
+condicionesIniciales();
