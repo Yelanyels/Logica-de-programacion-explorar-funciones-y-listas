@@ -1,4 +1,4 @@
-let numeroSecreto = 0;
+/*let numeroSecreto = 0;
 let intentos = 0;
 
 console.log(numeroSecreto);
@@ -65,29 +65,4 @@ function calcularDobleTriple(numero) {
 
   return `El doble de ${numero} es ${doble} y el triple es ${triple}.`;
 }
-//El siguiente código en JavaScript calcula el doble y el triple de un número proporcionado. Tu tarea consiste en seleccionar las opciones que sigan las mejores prácticas de programación y ayuden a mejorar la legibilidad y mantenibilidad del código.
-const numero = 5;
-const resultado = calcularDobleTriple(numero);
-console.log(resultado);
-// respuesta
-function calcularDoble(numero) {
-  return numero * 2;
-}
-
-function calcularTriple(numero) {
-  return numero * 3;
-}
-
-numero = 5;
-const doble = calcularDoble(numero);
-const triple = calcularTriple(numero);
-
-console.log(`El doble de ${numero} es ${doble} y el triple es ${triple}.`);
-
-//Un ejemplo ilustrativo de esto se encuentra en JavaScript, donde puedes emplear las comillas invertidas (backticks) para crear plantillas de cadenas. Esto te permite incrustar expresiones dentro de la cadena utilizando el formato ${}. A continuación, un ejemplo práctico:
-const nombre = "Juan";
-const edad = 30;
-const mensaje = `Hola, soy ${nombre} y tengo ${edad} años.`;
-console.log(mensaje);
-
-// Salida: Hola, soy Juan y tengo 30 años.
+*/
