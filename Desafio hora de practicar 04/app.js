@@ -1,3 +1,4 @@
+/*
 let numeroSecreto = 0;
 let intentos = 0;
 let listaNumerosSorteados = [];
@@ -74,66 +75,133 @@ function reiniciarJuego() {
 }
 
 condicionesIniciales();
-
-/*Contexto: Imagina que eres una persona desarrolladora que trabaja para Buscante, una importante tienda en línea de libros. Tu jefe te ha pedido que crees una función para sortear libros a los clientes. El sorteo debe hacerse de manera que todos los libros tengan la oportunidad de ser sorteados al menos una vez, y después de eso, el sorteo debe comenzar de nuevo. Recordaste la lección sobre la adición de la variable "numeroLimite" en el curso "Lógica de programación: explore funciones y listas". ¿Cómo implementarás el sorteo del libro teniendo en cuenta lo que se enseñó?
-
-function sortearLibro() {
-    let libroElegido = parseInt(Math.random() * numeroLimite + 1);
-    let cantidadDeLibrosSorteados = listaDeLibrosSorteados.length;
-    if (cantidadDeLibrosSorteados == numeroLimite) {
-        listaDeLibrosSorteados = [];
-    }
-    // Código omitido
-}
-    */
-/*//////////////////////////////////////////////////////////////////////////
-Un array, arreglo o lista en JavaScript es una estructura de datos que permite almacenar y organizar múltiples valores en una sola variable. Los valores en un array pueden ser de cualquier tipo de dato, como números, strings, objetos, otros arrays, y así sucesivamente. Los arrays en JavaScript son indexados, lo que significa que cada valor dentro de ellos está asociado con un índice numérico, generalmente comenzando desde el índice 0.
-
-Creando un array
-Puedes crear un array en JavaScript declarando una variable y asignándole valores entre corchetes [].
-
-let frutas = ["Manzana", "Uva", "Naranja"];
-
-Accediendo a los valores Los elementos de un array se acceden mediante índices numéricos, que comienzan en 0.
-
-Índice	Elemento
-0	"Manzana"
-1	"Uva"
-2	"Naranja"
-
-console.log(frutas[0]); // Salida: "Manzana"
-console.log(frutas[2]); // Salida: "Naranja"
-
-Añadiendo nuevos elementos
-Para agregar un elemento al final del array, puedes usar el método push.
-
-frutas.push("Fresa");
-console.log(frutas); // Salida: ["Manzana", "Uva", "Naranja", "Fresa"]
-
-Eliminando el último elemento
-Para eliminar el último elemento, puedes usar el método pop.
-
-frutas.pop();
-console.log(frutas); // Salida: ["Manzana", "Uva", "Naranja"]
-
-¿Qué lenguajes de programación utilizan arrays?
-Aquí tienes una lista de algunos lenguajes de programación que utilizan arrays:
-
-JavaScript
-Python
-Java
-C++
-C#
-Ruby
-PHP
-Swift
-Kotlin
-Go
-
-Otros lenguajes también admiten el uso de arrays o estructuras de datos similares para almacenar colecciones de valores. Aprender sobre arrays es importante porque desempeñan un papel fundamental en el desarrollo de aplicaciones de software.
-
-Las listas o arrays proporcionan una manera eficiente de almacenar y acceder a conjuntos de datos, lo que permite a los programadores organizar la información de manera lógica y manipular estos datos de manera efectiva.
-
-Con el conocimiento de cómo trabajar con arrays, es posible crear algoritmos más poderosos, resolver problemas de programación de manera más eficiente y crear aplicaciones más dinámicas e interactivas.
-
 */
+//1.Crea una lista vacía llamada "listaGenerica".
+let listaGenerica = [];
+
+//2.Crea una lista de lenguajes de programación llamada "lenguagesDeProgramacion con los siguientes elementos: 'JavaScript', 'C', 'C++', 'Kotlin' y 'Python'.
+let lenguajeDeProgramacion = ["JavaScript", "C", "C++", "Kotlin", "Python"];
+
+//3.Agrega a la lista "lenguagesDeProgramacion los siguientes elementos: 'Java', 'Ruby' y 'GoLang'.
+lenguajeDeProgramacion.push("Java", "Ruby", "GoLang");
+
+//4.Crea una función que muestre en la consola todos los elementos de la lista "lenguagesDeProgramacion.
+function mostrarLenguaje() {
+  lenguajeDeProgramacion.forEach((lenguaje) => {
+    console.log(lenguaje);
+  });
+}
+mostrarLenguaje();
+
+//5.Crea una función que muestre en la consola todos los elementos de la lista "lenguagesDeProgramacion en orden inverso.
+function mostrarLenguajeInverso() {
+  for (let i = lenguajeDeProgramacion.length - 1; i >= 0; i--) {
+    console.log(lenguajeDeProgramacion[i]);
+  }
+}
+mostrarLenguajeInverso();
+
+//6.Crea una función que calcule el promedio de los elementos en una lista de números.
+function promedioLenguaje(lista) {
+  let suma = 0;
+  for (i = 0; i < lista.length; i++) {
+    suma += lista[i];
+  }
+  return suma / lista.length;
+}
+let numeros = [10, 20, 30, 40, 50];
+let media = promedioLenguaje(numeros);
+console.log("Média: ", media);
+
+//7. Crea una función que muestre en la consola el número más grande y el número más pequeño en una lista.
+function numeroMayorMenor(listas) {
+  let mayor = listas[0];
+  let menor = listas[0];
+  for (let i = 1; i < listas.length; i++) {
+    if (listas[i] > mayor) {
+      mayor = listas[i];
+    }
+    if (listas[i] < menor) {
+      menor = listas[i];
+    }
+  }
+  console.log("Mayor:", mayor);
+  console.log("Menor:", menor);
+}
+let numero = [15, 8, 25, 5, 12];
+numeroMayorMenor(numero);
+
+//8.Crea una función que devuelva la suma de todos los elementos en una lista.
+function sumarLista(lista) {
+  let suma = 0;
+  for (let i = 0; i < lista.length; i++) {
+    suma += lista[i];
+  }
+  return suma;
+}
+
+// Ejemplo de uso:
+numero = [1, 2, 3, 4, 5];
+let total = sumarLista(numero);
+console.log("La suma de los elementos es:", total); // Imprime: La suma de los elementos es: 15
+
+//9.Crea una función que devuelva la posición en la lista donde se encuentra un elemento pasado como parámetro, o -1 si no existe en la lista.
+function buscarElemento(lista, elemento) {
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i] === elemento) {
+      return i; // Retorna la posición si encuentra el elemento
+    }
+  }
+  return -1; // Retorna -1 si el elemento no está en la lista
+}
+
+// Ejemplo de uso:
+let miLista = [10, 20, 30, 40, 50];
+let elementoBuscado = 30;
+let posicion = buscarElemento(miLista, elementoBuscado);
+
+if (posicion !== -1) {
+  console.log(
+    "El elemento",
+    elementoBuscado,
+    "se encuentra en la posición",
+    posicion
+  );
+} else {
+  console.log("El elemento", elementoBuscado, "no se encuentra en la lista");
+}
+
+//10.Crea una función que reciba dos listas de números del mismo tamaño y devuelva una nueva lista con la suma de los elementos uno a uno.
+function sumarListas(lista1, lista2) {
+  if (lista1.length !== lista2.length) {
+    return "Las listas deben tener el mismo tamaño";
+  }
+
+  let listaSuma = [];
+  for (let i = 0; i < lista1.length; i++) {
+    listaSuma.push(lista1[i] + lista2[i]);
+  }
+
+  return listaSuma;
+}
+
+// Ejemplo de uso:
+let numeros1 = [1, 2, 3, 4, 5];
+let numeros2 = [6, 7, 8, 9, 10];
+
+let resultado = sumarListas(numeros1, numeros2);
+console.log("La lista con la suma de los elementos es:", resultado); // Imprime: La lista con la suma de los elementos es: [7, 9, 11, 13, 15]
+
+//11. Crea una función que reciba una lista de números y devuelva una nueva lista con el cuadrado de cada número.
+function calcularCuadrados(lista) {
+  let listaCuadrados = [];
+  for (let i = 0; i < lista.length; i++) {
+    listaCuadrados.push(lista[i] * lista[i]);
+  }
+  return listaCuadrados;
+}
+
+// Ejemplo de uso:
+numeros = [1, 2, 3, 4, 5];
+let cuadrados = calcularCuadrados(numeros);
+console.log("La lista con los cuadrados es:", cuadrados); // Imprime: La lista con los cuadrados es: [1, 4, 9, 16, 25]
